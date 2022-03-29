@@ -32,10 +32,10 @@ let list_of_stocks = [
   "AxieInfinity",
   "Terra",
 ];
-cron.schedule("00 30 23 * * *", async () => {
+cron.schedule("00 30 19 * * *", async () => {
   let junk = await API.get(`twitter/getPopularTweets/Bitcoin/20`);
 });
-cron.schedule("10 32 23 * * *", async () => {
+cron.schedule("00 31 19 * * *", async () => {
   try {
     let { data } = await API.get(
       `twitter/masterlistcrypto/${list_of_stocks[0]}`
@@ -50,6 +50,7 @@ cron.schedule("10 32 23 * * *", async () => {
         User: data[i][4],
         ShortTermChange: data[i][5],
         LongTermChange: data[i][6],
+        Magnitude: data[i][8],
       };
       await API.post("db/creatingTweet", posted_data);
     }
@@ -58,7 +59,7 @@ cron.schedule("10 32 23 * * *", async () => {
   }
 });
 // update to 10 34 20
-cron.schedule("10 34 23 * * *", async () => {
+cron.schedule("20 31 19 * * *", async () => {
   try {
     let { data } = await API.get(
       `twitter/masterlistcrypto/${list_of_stocks[1]}`
@@ -73,6 +74,7 @@ cron.schedule("10 34 23 * * *", async () => {
         User: data[i][4],
         ShortTermChange: data[i][5],
         LongTermChange: data[i][6],
+        Magnitude: data[i][8],
       };
       await API.post("db/creatingTweet", posted_data);
     }
@@ -81,7 +83,7 @@ cron.schedule("10 34 23 * * *", async () => {
   }
 });
 
-cron.schedule("10 36 23 * * *", async () => {
+cron.schedule("40 31 19 * * *", async () => {
   try {
     let { data } = await API.get(
       `twitter/masterlistcrypto/${list_of_stocks[2]}`
@@ -96,6 +98,7 @@ cron.schedule("10 36 23 * * *", async () => {
         User: data[i][4],
         ShortTermChange: data[i][5],
         LongTermChange: data[i][6],
+        Magnitude: data[i][8],
       };
       await API.post("db/creatingTweet", posted_data);
     }
@@ -104,7 +107,7 @@ cron.schedule("10 36 23 * * *", async () => {
   }
 });
 
-cron.schedule("10 38 23 * * *", async () => {
+cron.schedule("00 32 19 * * *", async () => {
   try {
     let { data } = await API.get(
       `twitter/masterlistcrypto/${list_of_stocks[3]}`
@@ -119,6 +122,7 @@ cron.schedule("10 38 23 * * *", async () => {
         User: data[i][4],
         ShortTermChange: data[i][5],
         LongTermChange: data[i][6],
+        Magnitude: data[i][8],
       };
       await API.post("db/creatingTweet", posted_data);
     }
@@ -127,7 +131,7 @@ cron.schedule("10 38 23 * * *", async () => {
   }
 });
 
-cron.schedule("10 40 23 * * *", async () => {
+cron.schedule("20 32 19 * * *", async () => {
   try {
     let { data } = await API.get(
       `twitter/masterlistcrypto/${list_of_stocks[4]}`
@@ -142,6 +146,7 @@ cron.schedule("10 40 23 * * *", async () => {
         User: data[i][4],
         ShortTermChange: data[i][5],
         LongTermChange: data[i][6],
+        Magnitude: data[i][8],
       };
       await API.post("db/creatingTweet", posted_data);
     }
@@ -150,7 +155,7 @@ cron.schedule("10 40 23 * * *", async () => {
   }
 });
 
-cron.schedule("10 42 23 * * *", async () => {
+cron.schedule("40 32 19 * * *", async () => {
   try {
     let { data } = await API.get(
       `twitter/masterlistcrypto/${list_of_stocks[5]}`
@@ -165,6 +170,7 @@ cron.schedule("10 42 23 * * *", async () => {
         User: data[i][4],
         ShortTermChange: data[i][5],
         LongTermChange: data[i][6],
+        Magnitude: data[i][8],
       };
       await API.post("db/creatingTweet", posted_data);
     }
@@ -173,7 +179,7 @@ cron.schedule("10 42 23 * * *", async () => {
   }
 });
 
-cron.schedule("10 44 23 * * *", async () => {
+cron.schedule("00 33 19 * * *", async () => {
   try {
     let { data } = await API.get(
       `twitter/masterlistcrypto/${list_of_stocks[6]}`
@@ -188,6 +194,7 @@ cron.schedule("10 44 23 * * *", async () => {
         User: data[i][4],
         ShortTermChange: data[i][5],
         LongTermChange: data[i][6],
+        Magnitude: data[i][8],
       };
       await API.post("db/creatingTweet", posted_data);
     }
@@ -196,7 +203,7 @@ cron.schedule("10 44 23 * * *", async () => {
   }
 });
 
-cron.schedule("10 46 23 * * *", async () => {
+cron.schedule("20 33 19 * * *", async () => {
   try {
     let { data } = await API.get(
       `twitter/masterlistcrypto/${list_of_stocks[7]}`
@@ -211,6 +218,7 @@ cron.schedule("10 46 23 * * *", async () => {
         User: data[i][4],
         ShortTermChange: data[i][5],
         LongTermChange: data[i][6],
+        Magnitude: data[i][8],
       };
       await API.post("db/creatingTweet", posted_data);
     }
@@ -219,7 +227,7 @@ cron.schedule("10 46 23 * * *", async () => {
   }
 });
 
-cron.schedule("10 48 23 * * *", async () => {
+cron.schedule("40 33 19 * * *", async () => {
   try {
     let { data } = await API.get(
       `twitter/masterlistcrypto/${list_of_stocks[8]}`
@@ -234,6 +242,7 @@ cron.schedule("10 48 23 * * *", async () => {
         User: data[i][4],
         ShortTermChange: data[i][5],
         LongTermChange: data[i][6],
+        Magnitude: data[i][8],
       };
       await API.post("db/creatingTweet", posted_data);
     }
@@ -242,7 +251,7 @@ cron.schedule("10 48 23 * * *", async () => {
   }
 });
 
-cron.schedule("10 50 23 * * *", async () => {
+cron.schedule("00 34 19 * * *", async () => {
   try {
     let { data } = await API.get(
       `twitter/masterlistcrypto/${list_of_stocks[9]}`
@@ -257,6 +266,7 @@ cron.schedule("10 50 23 * * *", async () => {
         User: data[i][4],
         ShortTermChange: data[i][5],
         LongTermChange: data[i][6],
+        Magnitude: data[i][8],
       };
       await API.post("db/creatingTweet", posted_data);
     }
@@ -265,7 +275,7 @@ cron.schedule("10 50 23 * * *", async () => {
   }
 });
 
-cron.schedule("10 52 23 * * *", async () => {
+cron.schedule("20 34 19 * * *", async () => {
   try {
     let { data } = await API.get(
       `twitter/masterlistcrypto/${list_of_stocks[10]}`
@@ -280,6 +290,7 @@ cron.schedule("10 52 23 * * *", async () => {
         User: data[i][4],
         ShortTermChange: data[i][5],
         LongTermChange: data[i][6],
+        Magnitude: data[i][8],
       };
       await API.post("db/creatingTweet", posted_data);
     }
